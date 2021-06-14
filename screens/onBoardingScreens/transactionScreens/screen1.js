@@ -6,26 +6,27 @@ import Title from '../../../components/title'
 import CustomImage from '../../../components/customImage'
 
 
-const Screen1 = () => {
+const Comics = () => {
     return (
-        <View style={styles.container}>
-            <View style={styles.comics}>
-                <CustomImage source={require('../../../assets/comic1.jpg')} />
-                <CustomImage source={require('../../../assets/comic2.jpg')} />
-                <CustomImage source={require('../../../assets/comic3.jpg')} />
-            </View>
-            <Paragraph text='Enjoy hundreds of comics, posters, pictures and fascinating stories' />
+        <View style={styles.comics}>
+            <CustomImage source={require('../../../assets/comic1.jpg')} />
+            <CustomImage source={require('../../../assets/comic2.jpg')} />
+            <CustomImage source={require('../../../assets/comic3.jpg')} />
         </View>
-
     )
 }
 
-export default Screen1
+export default Comics
+
+export const TransactionScreen1 = {
+    backgroundColor: 'rgba(52, 52, 52, 0.8)',
+    image: <Comics />,
+    title: <Title title='We Blow Your Mind' />,
+    subtitle: <Paragraph text='Enjoy hundreds of comics, posters, pictures and fascinating stories.' />
+}
+
 
 const styles = StyleSheet.create({
-    container: {
-
-    },
     comics: {
         flexDirection: 'row'
     }
