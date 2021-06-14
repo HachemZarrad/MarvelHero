@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native'
 
 const BottomBar = () => {
     return (
-        <View>
+        <View style={styles.container}>
             <Text></Text>
         </View>
     )
@@ -11,4 +11,9 @@ const BottomBar = () => {
 
 export default BottomBar
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    container: {
+        flexDirection: 'row',
+        justifyContent: 'space-around'
+    }
+})
