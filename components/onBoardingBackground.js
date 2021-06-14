@@ -1,12 +1,13 @@
 import React from 'react'
-import { StyleSheet, View, Image } from 'react-native'
+import { StyleSheet, ImageBackground } from 'react-native'
 
 const OnBoardingBackground = props => {
     return (
-        <View style={styles.container}>
-            <Image style={{ ...styles.image, ...props.style }}
-                source={require('../assets/blackSpider.jpg')} />
-        </View>
+        <ImageBackground
+            source={require('../assets/blackSpider.jpg')}
+            style={{ ...styles.image, ...props.style }}
+        >
+        </ImageBackground>
     )
 }
 
