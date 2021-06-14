@@ -14,7 +14,7 @@ export const AppNavigator = () => {
             <SafeAreaView>
                 <StatusBar
                     animated={true}
-                    backgroundColor={Colors.statusBar}
+                    // backgroundColor={Colors.statusBar}
                 />
             </SafeAreaView>
             <ComicsNavigator />

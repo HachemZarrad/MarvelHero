@@ -6,11 +6,16 @@ import ComicsScreen from '../screens/comicsScreen'
 import OnBoardingScreen from '../screens/onBoardingScreen'
 
 
+const navigationOptions = {
+    headerShown: false
+}
+
+
 const comicsStackNavigator = createStackNavigator()
 
-export const comicsNavigator = () => {
+export const ComicsNavigator = () => {
     return(
-        <comicsStackNavigator.Navigator>
+        <comicsStackNavigator.Navigator screenOptions={navigationOptions}>
             <comicsStackNavigator.Screen name='OnBoarding' component={OnBoardingScreen}/>
             <comicsStackNavigator.Screen name='Comics' component={ComicsScreen}/>
         </comicsStackNavigator.Navigator>

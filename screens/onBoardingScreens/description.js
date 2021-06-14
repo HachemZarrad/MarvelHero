@@ -9,7 +9,7 @@ const Description = () => {
     return (
         <OnBoardingBackground>
             <View style={styles.container}>
-                <Image source={require('../assets/logoBack.png')} style={styles.image} />
+                <Image source={require('../../assets/logoBack.png')} style={styles.image} />
                 <Title title='Welcome to Marvel' />
                 <Paragraph text='We bring Marvel Heaven to you. Just pick up your favorite hero and boom, amazing comics are right in your hand.'/>
             </View>

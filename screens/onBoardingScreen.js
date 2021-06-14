@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, View } from 'react-native'
 import PagerView from 'react-native-pager-view'
 
 import TransactionScreen1 from './onBoardingScreens/transactionScreens/screen1'
@@ -14,10 +14,19 @@ const OnBoardingScreen = () => {
     return (
         <PagerView style={styles.pagerView} initialPage={0}>
             <View key="1">
-                <Text>First page</Text>
+                <Description />
             </View>
             <View key="2">
-                <Text>Second page</Text>
+                <TransactionScreen1 />
+            </View>
+            <View key="3">
+                <TransactionScreen2 />
+            </View>
+            <View key="4">
+                <NearbyStores />
+            </View>
+            <View key="5">
+                <FavoriteHero />
             </View>
         </PagerView>
     )
