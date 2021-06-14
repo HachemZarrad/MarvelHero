@@ -1,10 +1,20 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, View } from 'react-native'
+import Dots from 'react-native-dots-pagination';
 
-const BottomBar = () => {
+import { MaterialIcons } from '@expo/vector-icons';
+
+import Button from './button'
+
+
+const BottomBar = props => {
     return (
         <View style={styles.container}>
-            <Text></Text>
+            <Button title='Skip' />
+            <Dots length={5} active={props.active} />
+            {props.active === 5 ? <MaterialIcons name="done" size={24} color="white" /> :
+                <Button title='Next' />
+            }
         </View>
     )
 }
@@ -14,6 +24,7 @@ export default BottomBar
 const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
-        justifyContent: 'space-around'
+        justifyContent: 'space-around',
+        backgroundColor: 'red'
     }
 })
