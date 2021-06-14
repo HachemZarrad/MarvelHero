@@ -22,7 +22,7 @@ export const TransactionScreen1 = {
     backgroundColor: 'rgba(52, 52, 52, 0.8)',
     image: <Comics />,
     title: <Title title='We Blow Your Mind' />,
-    subtitle: <Paragraph text='Enjoy hundreds of comics, posters, pictures and fascinating stories.' />
+    subtitle: <Paragraph text='Enjoy hundreds of comics, posters, pictures and fascinating stories, All related to favorite hero.' />
 }
 
 
