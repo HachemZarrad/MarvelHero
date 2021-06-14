@@ -1,34 +1,33 @@
 import React from 'react'
-import { StyleSheet, Text, View, Image } from 'react-native'
+import { StyleSheet } from 'react-native'
 
 import Paragraph from '../../../components/paragraph'
+import MiddleImage from '../../../components/middleImage'
+import Title from '../../../components/title'
 
 
-const Screen2 = () => {
+
+const Picture = () => {
     return (
-        <View style={styles.container}>
-            <View style={styles.imageFrame}>
-                <Image
-                    source={require('../../../assets/blackSpider.jpg')}
-                    style={styles.image} />
-            </View>
-            <Paragraph text='Get deep into the world of your favorite heroes and their epic fights.'/>
-        </View>
+        <MiddleImage
+            source={require('../../../assets/blackSpider.jpg')}
+            style={styles.image} />
     )
 }
 
-export default Screen2
+export const TransactionScreen2 = {
+    backgroundColor: 'rgba(52, 52, 52, 0.8)',
+    image: <Picture/>,
+    title: <Title title='Reasonable Prices At Our Stores' />,
+    subtitle: <Paragraph text='Get deep into the world of your favorite heroes and their epic fights.' />
+
+}
+
+export default Picture
 
 const styles = StyleSheet.create({
-    container: {
-
-    },
     image: {
-        borderRadius: 20,
         height: 220,
         width: 190
     },
-    imageFrame: {
-        
-    }
 })

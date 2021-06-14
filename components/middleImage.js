@@ -3,7 +3,7 @@ import { StyleSheet, Image } from 'react-native'
 
 const MiddleImage = props => {
     return (
-        <Image {...props} style={styles.image} />
+        <Image {...props} style={{...styles.image, ...props.style}} />
     )
 }
 

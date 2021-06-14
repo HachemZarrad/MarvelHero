@@ -1,6 +1,5 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
-import { color } from 'react-native-elements/dist/helpers'
 
 const Paragraph = props => {
     return (
