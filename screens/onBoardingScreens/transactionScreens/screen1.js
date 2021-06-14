@@ -2,6 +2,7 @@ import React from 'react'
 import { StyleSheet, View } from 'react-native'
 
 import Paragraph from '../../../components/paragraph'
+import Title from '../../../components/title'
 import CustomImage from '../../../components/customImage'
 
 

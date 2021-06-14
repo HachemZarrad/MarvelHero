@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, ImageBackground } from 'react-native'
+import { StyleSheet, View, ImageBackground } from 'react-native'
 
 const OnBoardingBackground = props => {
     return (
@@ -19,6 +19,7 @@ const styles = StyleSheet.create({
     },
     image: {
         height: '100%',
-        width: '100%'
+        width: '100%',
+        backgroundColor: 'rgba(52, 52, 52, 0.8)',
     }
 })

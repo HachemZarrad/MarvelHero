@@ -1,5 +1,6 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
+import { color } from 'react-native-elements/dist/helpers'
 
 const Paragraph = props => {
     return (
@@ -16,12 +17,13 @@ export default Paragraph
 
 const styles = StyleSheet.create({
     container: {
-        width: '100%',
+        width: '90%',
         height: 80,
         alignItems: 'center',
     },
     text: {
-        fontStyle: 'italic',
-        fontWeight: 'bold',
+        flex: 1,
+        fontSize: 17,
+        color: 'white',
     }
 })
