@@ -1,11 +1,14 @@
 import React from 'react'
 import { StyleSheet, Text, View, Image } from 'react-native'
 
+import OnBoardingBackground from '../../components/onBoardingBackground'
+
+
 const Description = () => {
     return (
-        <View>
-            <Text></Text>
-        </View>
+        <OnBoardingBackground>
+            
+        </OnBoardingBackground>
     )
 }
 
