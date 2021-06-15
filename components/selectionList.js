@@ -5,20 +5,20 @@ import { Avatar, Accessory } from 'react-native-elements'
 const SelectionList = props => {
     return (
         <ScrollView  >
-            {props.filteredHeroes.map(hero => {
+            {props.list.map(item => {
                 return (
                     <TouchableOpacity 
-                        key={hero.id}>
+                        key={item.id}>
                         <View >
                             <Avatar
                                 source={{
-                                    uri: `${hero.thumbnail.path}.${hero.thumbnail.extension}`,
+                                    uri: `${item.thumbnail.path}.${item.thumbnail.extension}`,
                                 }}
                             >
                                 <Accessory />
                             </Avatar>
                             <View>
-                                <Text>{hero.name}</Text>
+                                <Text>{item.name}</Text>
                             </View>
                         </View>
                     </TouchableOpacity>

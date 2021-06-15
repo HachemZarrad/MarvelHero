@@ -24,7 +24,6 @@ export const TransactionScreen2 = {
 
 }
 
-export default Picture
 
 const styles = StyleSheet.create({
     image: {

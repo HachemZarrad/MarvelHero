@@ -18,7 +18,6 @@ const Comics = () => {
     )
 }
 
-export default Comics
 
 export const TransactionScreen1 = {
     backgroundColor: Colors.background,

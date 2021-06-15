@@ -6,7 +6,7 @@ export const fetchHeroes = () => async (dispatch) => {
         const response = await fetch(`${baseUrl}:443/v1/public/characters?ts=${ts}&apikey=${apiKey}&hash=${hash}`)
         if (!response.ok) throw new Error('Please Check Your Internet Connection')
         const heroes = await response.json()
-        dispatch({ type: ActionTypes.GET_HEROES, payload: heroes })
+        dispatch({ type: ActionTypes.GET_HEROES, payload: heroes.data.results })
     }
     catch (error) {
         throw error
