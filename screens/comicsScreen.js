@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { StyleSheet, View, ActivityIndicator, BackHandler, Alert} from 'react-native'
+import { StyleSheet, View, ActivityIndicator, BackHandler, Alert, ImageBackground } from 'react-native'
 
 import { useNavigation } from '@react-navigation/native'
 
@@ -11,6 +11,8 @@ import Input from '../components/input'
 import CustomList from '../components/customList'
 
 import { Comics } from '../constants/comics'
+import Colors from '../constants/colors'
+
 
 const ComicsScreen = () => {
 
@@ -51,25 +53,33 @@ const ComicsScreen = () => {
 
 
     return (
-        <View style={styles.container}>
-            <Input item={hero} />
-            {loading ? <ActivityIndicator size='large' color='gold' style={styles.spinner} /> :
-                <CustomList
-                    data={Comics}
-                    nextScreen='Comics'
-                    action={ActionTypes.GET_COMICS}
-                />
-            }
-        </View>
+        <ImageBackground source={require('../assets/dark3.png')} style={styles.background}>
+            <View style={styles.container}>
+                <Input item={hero} />
+                {loading ? <ActivityIndicator size='large' color='gold' style={styles.spinner} /> :
+                    <CustomList
+                        data={Comics}
+                        nextScreen='Comics'
+                        action={ActionTypes.GET_COMICS}
+                    />
+                }
+            </View>
+        </ImageBackground>
     )
 }
 
 export default ComicsScreen
 
 const styles = StyleSheet.create({
+    background: {
+        width: '100%',
+        height: '100%',
+    },
     container: {
-        width: '90%',
+        flex: 1,
+        padding: 18,
         alignItems: 'center',
+        backgroundColor: Colors.background, 
     },
     spinner: {
         justifyContent: 'center',

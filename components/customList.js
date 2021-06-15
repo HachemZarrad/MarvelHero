@@ -35,12 +35,12 @@ const DisplayAccordingToAction = ({ action, item, pickUpHero }) => {
             )
         case (ActionsTypes.GET_COMICS):
             return (
-                <View>
+                <View style={styles.comicFrame}>
                     <Comic source={{ uri: `${item.thumbnail.path}.${item.thumbnail.extension}` }} />
-                    <View>
+                    <View style={styles.comicDetails}>
                         <Title title={item.title} />
-                        <Text>issue number: {item.issueNumber}</Text>
-                        <Text>Price: ${item.prices[0].price}</Text>
+                        <Text style={styles.priceIssueNumber}>issue number: {item.issueNumber}</Text>
+                        <Text style={styles.priceIssueNumber}>Price: ${item.prices[0].price}</Text>
                     </View>
                 </View>
             )
@@ -105,5 +105,18 @@ const styles = StyleSheet.create({
     heroName: {
         fontSize: 16,
         marginLeft: 15,
+    },
+    comicFrame: {
+        flexDirection: 'row',
+        height: 200,
+        width: 344,
+        borderRadius: 10
+    },
+    comicDetails: {
+        justifyContent: 'center',
+    },
+    priceIssueNumber: {
+        fontSize: 17,
+        color: 'white'
     }
 })
