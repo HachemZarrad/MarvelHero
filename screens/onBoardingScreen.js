@@ -1,25 +1,32 @@
 import React from 'react'
 import { StyleSheet, ImageBackground } from 'react-native'
 import Onboarding from 'react-native-onboarding-swiper'
+import { useNavigation } from '@react-navigation/native'
 
 import { TransactionScreen1 } from './onBoardingScreens/transactionScreens/screen1'
 import { TransactionScreen2 } from './onBoardingScreens/transactionScreens/screen2'
 
 import { Description } from './onBoardingScreens/description'
 import NearbyStores from './onBoardingScreens/nearbyStores'
-import {FavoriteHeroScreen} from './onBoardingScreens/favoriteHero'
+import { FavoriteHeroScreen } from './onBoardingScreens/favoriteHero'
 
 import Colors from '../constants/colors'
 
 
 
 const OnBoardingScreen = () => {
+
+    const navigation = useNavigation()
+    const goToComics = () => { navigation.navigate('Comics') }
+
     return (
         <ImageBackground
             source={require('../assets/blackSpider.jpg')}
             style={styles.background}
         >
             <Onboarding
+                onDone={goToComics}
+                onSkip={goToComics}
                 pages={[
                     Description,
                     TransactionScreen1,

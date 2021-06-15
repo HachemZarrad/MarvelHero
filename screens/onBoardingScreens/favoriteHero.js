@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { StyleSheet, View, ActivityIndicator, Button } from 'react-native'
+import { StyleSheet, View } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 
 import { useDispatch, useSelector } from 'react-redux'
@@ -19,14 +19,10 @@ const FavoriteHero = () => {
     const hero = useSelector(state => state.heroes.favoriteHero)
     const reduxDispatch = useDispatch()
     // const heroes = useSelector(state => state.heroes.heroes)
-    const [loading, setLoading] = useState(false)
 
 
     // useEffect(() => {
-    //     setLoading(true)
-    //     reduxDispatch(HeroesActions.fetchHeroes()).then(() => {
-    //         setLoading(false)
-    //     })
+    //     reduxDispatch(HeroesActions.fetchHeroes())
     // }, [reduxDispatch])
 
 
