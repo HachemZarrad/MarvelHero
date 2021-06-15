@@ -9,6 +9,7 @@ import { Description } from './onBoardingScreens/description'
 import NearbyStores from './onBoardingScreens/nearbyStores'
 import FavoriteHero from './onBoardingScreens/favoriteHero'
 
+import Colors from '../constants/colors'
 
 
 
@@ -53,6 +54,6 @@ const styles = StyleSheet.create({
     background: {
         height: '100%',
         width: '100%',
-        backgroundColor: 'rgba(52, 52, 52, 0.8)',
+        backgroundColor: Colors.background,
     }
 })

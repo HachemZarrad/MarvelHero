@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyleSheet, Image } from 'react-native'
 
-const customImage = props => {
+const Comic = props => {
     return (
             <Image
                 {...props}
@@ -10,7 +10,7 @@ const customImage = props => {
     )
 }
 
-export default customImage
+export default Comic 
 
 const styles = StyleSheet.create({
     image: {

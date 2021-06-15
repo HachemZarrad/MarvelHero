@@ -5,6 +5,7 @@ import Paragraph from '../../../components/paragraph'
 import MiddleImage from '../../../components/middleImage'
 import Title from '../../../components/title'
 
+import Colors from '../../../constants/colors'
 
 
 const Picture = () => {
@@ -16,7 +17,7 @@ const Picture = () => {
 }
 
 export const TransactionScreen2 = {
-    backgroundColor: 'rgba(52, 52, 52, 0.8)',
+    backgroundColor: Colors.background,
     image: <Picture/>,
     title: <Title title='Reasonable Prices At Our Stores' />,
     subtitle: <Paragraph text='Get deep into the world of your favorite heroes and their epic fights.' />

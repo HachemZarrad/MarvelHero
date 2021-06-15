@@ -5,6 +5,8 @@ import Paragraph from '../../../components/paragraph'
 import Title from '../../../components/title'
 import CustomImage from '../../../components/customImage'
 
+import Colors from '../../../constants/colors'
+
 
 const Comics = () => {
     return (
@@ -19,7 +21,7 @@ const Comics = () => {
 export default Comics
 
 export const TransactionScreen1 = {
-    backgroundColor: 'rgba(52, 52, 52, 0.8)',
+    backgroundColor: Colors.background,
     image: <Comics />,
     title: <Title title='We Blow Your Mind' />,
     subtitle: <Paragraph text='Enjoy hundreds of comics, posters, pictures and fascinating stories, All related to favorite hero.' />
