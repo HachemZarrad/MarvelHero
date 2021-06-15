@@ -17,9 +17,9 @@ const comicsStackNavigator = createStackNavigator()
 export const ComicsNavigator = () => {
     return(
         <comicsStackNavigator.Navigator screenOptions={navigationOptions}>
-            <comicsStackNavigator.Screen name='Comics' component={ComicsScreen}/>
-            <comicsStackNavigator.Screen name='Heroes' component={HeroesScreen}/>
             <comicsStackNavigator.Screen name='OnBoarding' component={OnBoardingScreen}/>
+            <comicsStackNavigator.Screen name='Heroes' component={HeroesScreen}/>
+            <comicsStackNavigator.Screen name='Comics' component={ComicsScreen}/>
         </comicsStackNavigator.Navigator>
     )
 }

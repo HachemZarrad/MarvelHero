@@ -12,18 +12,21 @@ const DisplayAccordingToAction = ({ action, item }) => {
     switch (action) {
         case (Actions.GET_HEROES):
             return (
-                <TouchableOpacity style={styles.hero}>
-                    {/* <View style={styles.image}> */}
+                <View style={styles.heroFrame}>
+                    <View style={styles.hero}>
                         <Avatar
                             source={{
                                 uri: `${item.thumbnail.path}.${item.thumbnail.extension}`,
                             }}
+                            size='medium'
+
                         >
                             <Accessory />
                         </Avatar>
-                        <Text style={styles.name}>{item.name}</Text>
-                    {/* </View> */}
-                </TouchableOpacity>
+                        <Title title={item.name} style={styles.heroName} />
+                    </View>
+                </View>
+
             )
         case (Actions.GET_COMICS):
             return (
@@ -52,7 +55,9 @@ const CustomList = props => {
                     {...props}
                     keyExtractor={({ id }) => id.toString()}
                     renderItem={({ item }) => (
-                        <DisplayAccordingToAction item={item} action={action} />
+                        <TouchableOpacity>
+                            <DisplayAccordingToAction item={item} action={action} />
+                        </TouchableOpacity>
                     )}
                 />
             }
@@ -66,7 +71,7 @@ const styles = StyleSheet.create({
     list: {
         flex: 1,
     },
-    hero: {
+    heroFrame: {
         flexDirection: 'row',
         justifyContent: 'space-around',
         alignItems: 'center',
@@ -76,13 +81,14 @@ const styles = StyleSheet.create({
         borderBottomColor: 'black',
         borderBottomWidth: 0.4
     },
-    image: {
+    hero: {
         flexDirection: 'row',
         alignItems: 'center',
         margin: 10,
         flex: 1,
     },
     heroName: {
-        marginLeft: 10,
+        fontSize: 16,
+        marginLeft: 15,
     }
 })

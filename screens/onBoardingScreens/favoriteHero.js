@@ -1,17 +1,13 @@
 import React, { useState, useEffect } from 'react'
-import { StyleSheet, View, ActivityIndicator } from 'react-native'
+import { StyleSheet, View, ActivityIndicator, Button } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 
 import { useDispatch, useSelector } from 'react-redux'
 
 import * as HeroesActions from '../../redux/actions/heroes'
-import * as ActionTypes from '../../redux/actions/actionsTypes'
 
 import Input from '../../components/input'
-import SelectionList from '../../components/selectionList'
-import CustomList from '../../components/customList'
 import Title from '../../components/title'
-import { Heroes } from '../../constants/heroes'
 
 const FavoriteHero = () => {
 
@@ -26,6 +22,10 @@ const FavoriteHero = () => {
         reduxDispatch(HeroesActions.getFavoriteHero(heroId))
     }
 
+    const goPickHero = () => {
+        navigation.navigate('Heroes')
+    }
+
     // useEffect(() => {
     //     setLoading(true)
     //     reduxDispatch(HeroesActions.fetchHeroes()).then(() => {
@@ -35,12 +35,14 @@ const FavoriteHero = () => {
 
 
     return (
-        <View style={styles.container1}>
+        <View style={styles.container}>
             <Title title='Choose Your Marvel Hero' style={styles.title} />
             <Input placeholder='Search Here' />
-            {loading ? <ActivityIndicator size="large" color='gold' /> :
-                <CustomList data={Heroes} action={ActionTypes.GET_HEROES}/>
-            }
+            <Button
+                onPress={goPickHero}
+                title="Learn More"
+                color="#841584"
+            />
         </View>
     )
 }
