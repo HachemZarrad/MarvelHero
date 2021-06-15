@@ -3,7 +3,7 @@ import { StyleSheet, View } from 'react-native'
 
 import Paragraph from '../../../components/paragraph'
 import Title from '../../../components/title'
-import CustomImage from '../../../components/customImage'
+import Comic from '../../../components/comic'
 
 import Colors from '../../../constants/colors'
 
@@ -11,9 +11,9 @@ import Colors from '../../../constants/colors'
 const Comics = () => {
     return (
         <View style={styles.comics}>
-            <CustomImage source={require('../../../assets/comic1.jpg')} />
-            <CustomImage source={require('../../../assets/comic2.jpg')} />
-            <CustomImage source={require('../../../assets/comic3.jpg')} />
+            <Comic source={require('../../../assets/comic1.jpg')} />
+            <Comic source={require('../../../assets/comic2.jpg')} />
+            <Comic source={require('../../../assets/comic3.jpg')} />
         </View>
     )
 }

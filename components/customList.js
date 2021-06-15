@@ -3,20 +3,19 @@ import { StyleSheet, Text, View, FlatList } from 'react-native'
 
 import * as Actions from '../redux/actions/actionsTypes'
 
+import Comic from './comic'
+import Title from './title'
+
 const displayAccordingToAction = ({ action, item }) => {
     switch (action) {
         case (Actions.GET_COMICS):
             return (
-                <View style={{
-                    flexDirection: 'row', height: 200, marginBottom: 10,
-                    width: 344, borderRadius: 10
-                }}>
-                    <Image source={{ uri: `${item.thumbnail.path}.${item.thumbnail.extension}` }}
-                        style={{ width: 120, height: 200, margin: 15 }} />
-                    <View style={{ justifyContent: 'center' }}>
-                        <Text style={{ fontSize: 20, fontWeight: 'bold', marginBottom: 30, marginRight: 180 }}>{item.title}</Text>
-                        <Text style={{ fontSize: 17 }}>issue number: {item.issueNumber}</Text>
-                        <Text style={{ fontSize: 17 }}>Price: ${item.prices[0].price}</Text>
+                <View>
+                    <Comic source={{ uri: `${item.thumbnail.path}.${item.thumbnail.extension}` }} />
+                    <View>
+                        <Title title={item.title} />
+                        <Text>issue number: {item.issueNumber}</Text>
+                        <Text>Price: ${item.prices[0].price}</Text>
                     </View>
                 </View>
             )
@@ -27,18 +26,15 @@ const displayAccordingToAction = ({ action, item }) => {
     }
 }
 
-const CustomList = () => {
-
+const CustomList = props => {
     return (
         <View style={{ flex: 1 }}>
-            {props.data.length === 0 ? <View><Text>No Data Matches Your Filters</Text></View> :
+            {props.data.length === 0 ? <View><Text>Please Check Your Internet Connection.</Text></View> :
                 <FlatList
                     {...props}
-                    keyExtractor={({ _id }) => _id.toString()}
+                    keyExtractor={({ id }) => id.toString()}
                     renderItem={({ item }) => (
-                        <TouchableOpacity onPress={() => handleItemClick(pressedElement, item)}>
-                            <DisplayAccordingToService item={item} service={service} />
-                        </TouchableOpacity>
+                        <DisplayAccordingToAction item={item} action={action} />
                     )}
                 />
             }
