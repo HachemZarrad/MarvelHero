@@ -1,9 +1,17 @@
 import * as ActionTypes from '../actions/actionsTypes'
 
+const defaultHero = {
+    "id": 1011334,
+    "name": "3-D Man",
+    "thumbnail": {
+        "path": "http://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784",
+        "extension": "jpg"
+    }
+}
 
 const initialState = {
     heroes: [],
-    favoriteHero: '',
+    favoriteHero: defaultHero,
 }
 
 export default (state = initialState, action) => {

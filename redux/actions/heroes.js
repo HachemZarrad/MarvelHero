@@ -13,6 +13,6 @@ export const fetchHeroes = () => async (dispatch) => {
     }
 }
 
-export const getFavoriteHero = (heroId) => {
-    dispatch({ type: ActionTypes.GET_FAV_HERO, payload: heroId })
+export const getFavoriteHero = (hero) => (dispatch) => {
+    dispatch({ type: ActionTypes.GET_FAV_HERO, payload: hero })
 }

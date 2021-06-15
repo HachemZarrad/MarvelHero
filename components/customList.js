@@ -2,20 +2,22 @@ import React from 'react'
 import { StyleSheet, Text, View, FlatList, TouchableOpacity } from 'react-native'
 
 import { useNavigation } from '@react-navigation/native'
+import { useDispatch } from 'react-redux'
 
 import { Avatar, Accessory } from 'react-native-elements'
 
-import * as Actions from '../redux/actions/actionsTypes'
+import * as ActionsTypes from '../redux/actions/actionsTypes'
+import * as HeroesActions from '../redux/actions/heroes'
 
 import Comic from './comic'
 import Title from './title'
 
 
-const DisplayAccordingToAction = ({ action, item }) => {
+const DisplayAccordingToAction = ({ action, item, pickUpHero }) => {
     switch (action) {
-        case (Actions.GET_HEROES):
+        case (ActionsTypes.GET_HEROES):
             return (
-                <View style={styles.heroFrame}>
+                <TouchableOpacity style={styles.heroFrame} onPress={() => pickUpHero(item)}>
                     <View style={styles.hero}>
                         <Avatar
                             source={{
@@ -28,10 +30,10 @@ const DisplayAccordingToAction = ({ action, item }) => {
                         </Avatar>
                         <Title title={item.name} style={styles.heroName} />
                     </View>
-                </View>
+                </TouchableOpacity>
 
             )
-        case (Actions.GET_COMICS):
+        case (ActionsTypes.GET_COMICS):
             return (
                 <View>
                     <Comic source={{ uri: `${item.thumbnail.path}.${item.thumbnail.extension}` }} />
@@ -52,11 +54,15 @@ const DisplayAccordingToAction = ({ action, item }) => {
 const CustomList = props => {
 
     const navigation = useNavigation()
+    const reduxDispatch = useDispatch()
+
     const { action, nextScreen } = props
 
-    const handleItemClick = (nextScreen, item) => {
-        navigation.navigate(nextScreen, item)
+    const pickUpHero = (hero) => {
+        reduxDispatch(HeroesActions.getFavoriteHero(hero))
+        navigation.navigate(nextScreen)
     }
+
 
     return (
         <View style={styles.list}>
@@ -65,9 +71,11 @@ const CustomList = props => {
                     {...props}
                     keyExtractor={({ id }) => id.toString()}
                     renderItem={({ item }) => (
-                        <TouchableOpacity onPress={() => handleItemClick(nextScreen, item)}>
-                            <DisplayAccordingToAction item={item} action={action} />
-                        </TouchableOpacity>
+                        <DisplayAccordingToAction
+                            item={item}
+                            action={action}
+                            pickUpHero={pickUpHero}
+                        />
                     )}
                 />
             }
