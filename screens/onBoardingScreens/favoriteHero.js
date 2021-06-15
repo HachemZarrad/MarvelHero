@@ -9,8 +9,8 @@ import Title from '../../components/title'
 const FavoriteHero = () => {
     return (
         <View style={styles.container}>
-            <Title title='Choose Your Favorite Marvel Hero' />
-            <Input placeholder='Pick Up Your Hero Here' />
+            <Title title='Choose Your Marvel Hero' style={styles.title} />
+            <Input placeholder='Search Here' />
         </View>
     )
 }
@@ -20,6 +20,10 @@ export default FavoriteHero
 const styles = StyleSheet.create({
     container: {
         width: '80%',
-        backgroundColor: 'red',
+        marginBottom: 200,
+    },
+    title: {
+        alignSelf: 'center',
+        paddingBottom: 20,
     }
 })
