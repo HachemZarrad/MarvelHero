@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { StyleSheet, View, ActivityIndicator, BackHandler, Alert, ImageBackground } from 'react-native'
+import { StyleSheet, View, ActivityIndicator, BackHandler, Alert, ImageBackground, Platform } from 'react-native'
 
 import { useNavigation } from '@react-navigation/native'
 
@@ -55,7 +55,7 @@ const ComicsScreen = () => {
     return (
         <ImageBackground source={require('../assets/dark3.png')} style={styles.background}>
             <View style={styles.container}>
-                <Input item={hero} />
+                <Input item={hero} style={styles.input} />
                 {loading ? <ActivityIndicator size='large' color='gold' style={styles.spinner} /> :
                     <CustomList
                         data={Comics}
@@ -77,12 +77,15 @@ const styles = StyleSheet.create({
     },
     container: {
         flex: 1,
-        padding: 18,
+        padding: 8,
+        marginTop: Platform.OS === 'ios' ? 30 : 0 ,
         alignItems: 'center',
-        backgroundColor: Colors.background, 
+        backgroundColor: Colors.background,
     },
     spinner: {
         justifyContent: 'center',
         alignItems: 'center',
+    },
+    input: {
     }
 })

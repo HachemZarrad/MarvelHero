@@ -12,6 +12,8 @@ import * as HeroesActions from '../redux/actions/heroes'
 import Comic from './comic'
 import Title from './title'
 
+import Colors from '../constants/colors'
+
 
 const DisplayAccordingToAction = ({ action, item, pickUpHero }) => {
     switch (action) {
@@ -86,6 +88,9 @@ const CustomList = props => {
 export default CustomList
 
 const styles = StyleSheet.create({
+    list: {
+        width: '100%'
+    },
     heroFrame: {
         flexDirection: 'row',
         justifyContent: 'space-around',
@@ -109,14 +114,23 @@ const styles = StyleSheet.create({
     comicFrame: {
         flexDirection: 'row',
         height: 200,
-        width: 344,
-        borderRadius: 10
+        backgroundColor: Colors.accent,
+        margin: 5,
+        width: '96%',
+        borderRadius: 10,
+        flex: 1,
+        overflow: 'hidden',
     },
     comicDetails: {
-        justifyContent: 'center',
+        // margin: 10,
+        justifyContent: 'center'
     },
     priceIssueNumber: {
         fontSize: 17,
+        fontWeight: 'bold',
         color: 'white'
+    },
+    comicTitle: {
+        marginRight: 15
     }
 })
