@@ -1,35 +1,46 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, TextInput, View } from 'react-native'
 
+import { AntDesign } from '@expo/vector-icons';
+import Colors from '../constants/colors'
 
-const input = () => {
+const Input = props => {
     return (
-        <View style={{ ...styles.container, ...props.style }}>
+        <View style={styles.container}>
+            <AntDesign
+                name="search1"
+                size={24}
+                color="black"
+                style={styles.icon} />
             <TextInput
                 {...props}
                 placeholderTextColor="black"
                 style={{ ...styles.inputBar, ...props.style }}
-                value={inputValue}
+            // value={inputValue}
             >
             </TextInput>
         </View>
     )
 }
 
-export default input
+export default Input
 
 const styles = StyleSheet.create({
     container: {
-        width: '90%',
+        flexDirection: 'row',
+        width: '100%',
         height: 50,
         backgroundColor: 'white',
+        alignItems: 'center',
         borderRadius: 20,
         borderWidth: 4,
-        margin: 5,
-        borderColor: 'red',
+        borderColor: Colors.frame,
 
     },
     inputBar: {
-        flex: 1
+        margin: 10,
     },
+    icon: {
+        margin: 4,
+    }
 })

@@ -31,7 +31,7 @@ const OnBoardingScreen = () => {
                         subtitle: 'Done with React Native Onboarding Swiper',
                     },
                     {
-                        backgroundColor: '#fff',
+                        backgroundColor: Colors.background,
                         image: <FavoriteHero />,
                         title: 'Onboarding',
                         subtitle: 'Done with React Native Onboarding Swiper',
