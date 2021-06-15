@@ -6,7 +6,7 @@ export const fetchComics = (heroId) => async (dispatch) => {
             const response = await fetch(`${baseUrl}/v1/public/characters/${heroId}/comics?ts=${ts}&apikey=${apiKey}&hash=${hash}`)
             if (!response.ok) throw new Error('Please Check Your Internet Connection')
             const comics = await response.json()
-            dispatch({ type: ActionTypes.GET_COMICS, payload: comics })
+            dispatch({ type: ActionTypes.GET_COMICS, payload: comics.data.results })
         }
         catch (error) {
             throw error

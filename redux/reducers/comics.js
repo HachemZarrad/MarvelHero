@@ -8,7 +8,7 @@ const initialState = {
 export default (state = initialState, action) => {
     switch (action.type) {
         case (ActionTypes.GET_COMICS):
-            return { ...state, comics: payload }
+            return { ...state, comics: action.payload }
         default:
             return initialState
     }

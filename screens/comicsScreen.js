@@ -8,6 +8,8 @@ import { fetchComics } from '../redux/actions/comics'
 import Input from '../components/input'
 import CustomList from '../components/customList'
 
+import Comics from '../constants/comics'
+
 const ComicsScreen = () => {
 
     const reduxDispatch = useDispatch()
@@ -18,9 +20,9 @@ const ComicsScreen = () => {
 
     useEffect(() => {
         setLoading(true)
-        reduxDispatch(fetchComics().then(() => {
+        reduxDispatch(fetchComics(hero.id)).then(() => {
             setLoading(false)
-        }))
+        })
     }, [reduxDispatch])
 
 
