@@ -7,7 +7,7 @@ import { TransactionScreen2 } from './onBoardingScreens/transactionScreens/scree
 
 import { Description } from './onBoardingScreens/description'
 import NearbyStores from './onBoardingScreens/nearbyStores'
-import FavoriteHero from './onBoardingScreens/favoriteHero'
+import {FavoriteHeroScreen} from './onBoardingScreens/favoriteHero'
 
 import Colors from '../constants/colors'
 
@@ -30,12 +30,7 @@ const OnBoardingScreen = () => {
                         title: 'Onboarding',
                         subtitle: 'Done with React Native Onboarding Swiper',
                     },
-                    {
-                        backgroundColor: Colors.background,
-                        image: <FavoriteHero />,
-                        title: '',
-                        subtitle: '',
-                    },
+                    FavoriteHeroScreen,
                 ]}
             />
         </ImageBackground>

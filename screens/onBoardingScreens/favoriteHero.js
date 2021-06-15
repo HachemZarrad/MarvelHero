@@ -8,12 +8,15 @@ import * as HeroesActions from '../../redux/actions/heroes'
 
 import Input from '../../components/input'
 import Title from '../../components/title'
+import Paragraph from '../../components/paragraph'
+
+import Colors from '../../constants/colors'
 
 
 
 const FavoriteHero = () => {
 
-    const hero = useSelector(state => state.heroes.favoriteHero) 
+    const hero = useSelector(state => state.heroes.favoriteHero)
     const reduxDispatch = useDispatch()
     // const heroes = useSelector(state => state.heroes.heroes)
     const [loading, setLoading] = useState(false)
@@ -35,15 +38,19 @@ const FavoriteHero = () => {
     )
 }
 
-export default FavoriteHero
+export const FavoriteHeroScreen = {
+    backgroundColor: Colors.background,
+    image: <FavoriteHero />,
+    title: <Title title='Are you Ready ?' />,
+    subtitle: <Paragraph text='Let we jump to Marvel Fantasy.' />
+}
+
 
 const styles = StyleSheet.create({
     container: {
         width: '80%',
-        marginBottom: 100,
     },
     title: {
         alignSelf: 'center',
-        paddingBottom: 20,
     }
 })

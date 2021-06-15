@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, TextInput, View, TouchableOpacity } from 'react-native'
+import { StyleSheet, View, TouchableOpacity } from 'react-native'
 import { useNavigation } from '@react-navigation/native';
 
 import { Avatar, Accessory } from 'react-native-elements'
@@ -70,6 +70,7 @@ const styles = StyleSheet.create({
     },
     heroName: {
         color: 'black',
-        margin: 5,
+        fontSize: 15,
+        margin: 15,
     }
 })

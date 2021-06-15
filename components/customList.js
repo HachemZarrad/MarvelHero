@@ -86,9 +86,6 @@ const CustomList = props => {
 export default CustomList
 
 const styles = StyleSheet.create({
-    list: {
-        // flex: 1,
-    },
     heroFrame: {
         flexDirection: 'row',
         justifyContent: 'space-around',
