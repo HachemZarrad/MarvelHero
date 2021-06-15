@@ -1,12 +1,15 @@
 import React from 'react'
 import { StyleSheet, Text, View, FlatList, TouchableOpacity } from 'react-native'
 
+import { useNavigation } from '@react-navigation/native'
+
 import { Avatar, Accessory } from 'react-native-elements'
 
 import * as Actions from '../redux/actions/actionsTypes'
 
 import Comic from './comic'
 import Title from './title'
+
 
 const DisplayAccordingToAction = ({ action, item }) => {
     switch (action) {
@@ -47,7 +50,14 @@ const DisplayAccordingToAction = ({ action, item }) => {
 }
 
 const CustomList = props => {
-    const { action, itemDetails } = props
+
+    const navigation = useNavigation()
+    const { action, nextScreen } = props
+
+    const handleItemClick = (nextScreen, item) => {
+        navigation.navigate(nextScreen, item)
+    }
+
     return (
         <View style={styles.list}>
             {props.data.length === 0 ? <View><Text>Please Check Your Internet Connection.</Text></View> :
@@ -55,7 +65,7 @@ const CustomList = props => {
                     {...props}
                     keyExtractor={({ id }) => id.toString()}
                     renderItem={({ item }) => (
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={() => handleItemClick(nextScreen, item)}>
                             <DisplayAccordingToAction item={item} action={action} />
                         </TouchableOpacity>
                     )}
@@ -69,7 +79,7 @@ export default CustomList
 
 const styles = StyleSheet.create({
     list: {
-        flex: 1,
+        // flex: 1,
     },
     heroFrame: {
         flexDirection: 'row',
@@ -79,7 +89,7 @@ const styles = StyleSheet.create({
         width: '80%',
         margin: 10,
         borderBottomColor: 'black',
-        borderBottomWidth: 0.4
+        borderBottomWidth: 0.8
     },
     hero: {
         flexDirection: 'row',
