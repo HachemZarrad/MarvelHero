@@ -46,7 +46,7 @@ const DisplayAccordingToAction = ({ action, item }) => {
 const CustomList = props => {
     const { action, itemDetails } = props
     return (
-        <View style={{ flex: 1 }}>
+        <View style={styles.list}>
             {props.data.length === 0 ? <View><Text>Please Check Your Internet Connection.</Text></View> :
                 <FlatList
                     {...props}
@@ -63,6 +63,9 @@ const CustomList = props => {
 export default CustomList
 
 const styles = StyleSheet.create({
+    list: {
+        flex: 1,
+    },
     hero: {
         flexDirection: 'row',
         justifyContent: 'space-around',
