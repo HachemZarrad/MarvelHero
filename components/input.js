@@ -1,25 +1,44 @@
 import React from 'react'
-import { StyleSheet, TextInput, View } from 'react-native'
+import { StyleSheet, TextInput, View, TouchableOpacity } from 'react-native'
+import { useNavigation } from '@react-navigation/native';
 
+import { Avatar, Accessory } from 'react-native-elements'
 import { AntDesign } from '@expo/vector-icons';
+
 import Colors from '../constants/colors'
 
+import Title from './title';
+
 const Input = props => {
+    const navigation = useNavigation()
+
+    const { item } = props
+
+    const goPickHero = () => {
+        navigation.navigate('Heroes')
+    }
+
     return (
-        <View style={styles.container}>
+        <TouchableOpacity style={styles.container} onPress={goPickHero}>
+            <View style={styles.hero}>
+                <Avatar
+                    source={{
+                        uri: `${item.thumbnail.path}.${item.thumbnail.extension}`,
+                    }}
+                    size='small'
+
+                >
+                    <Accessory />
+                </Avatar>
+                <Title title={item.name} style={styles.heroName} />
+            </View>
             <AntDesign
-                name="search1"
-                size={24}
-                color="black"
-                style={styles.icon} />
-            <TextInput
-                {...props}
-                placeholderTextColor="black"
-                style={{ ...styles.inputBar, ...props.style }}
-            // value={inputValue}
-            >
-            </TextInput>
-        </View>
+                name="caretdown"
+                size={18}
+                color={Colors.button}
+                style={styles.icon}
+            />
+        </TouchableOpacity>
     )
 }
 
@@ -41,6 +60,16 @@ const styles = StyleSheet.create({
         margin: 10,
     },
     icon: {
-        margin: 4,
+        margin: 10,
+    },
+    hero: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        margin: 10,
+        flex: 1,
+    },
+    heroName: {
+        color: 'black',
+        margin: 5,
     }
 })
