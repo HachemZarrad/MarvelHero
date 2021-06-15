@@ -5,9 +5,11 @@ import { useNavigation } from '@react-navigation/native'
 import { useDispatch, useSelector } from 'react-redux'
 
 import * as HeroesActions from '../../redux/actions/heroes'
+import * as ActionTypes from '../../redux/actions/actionsTypes'
 
 import Input from '../../components/input'
 import SelectionList from '../../components/selectionList'
+import CustomList from '../../components/customList'
 import Title from '../../components/title'
 import { Heroes } from '../../constants/heroes'
 
@@ -33,11 +35,11 @@ const FavoriteHero = () => {
 
 
     return (
-        <View style={styles.container}>
+        <View style={styles.container1}>
             <Title title='Choose Your Marvel Hero' style={styles.title} />
             <Input placeholder='Search Here' />
             {loading ? <ActivityIndicator size="large" color='gold' /> :
-                <SelectionList list={Heroes} />
+                <CustomList data={Heroes} action={ActionTypes.GET_HEROES}/>
             }
         </View>
     )
@@ -48,7 +50,7 @@ export default FavoriteHero
 const styles = StyleSheet.create({
     container: {
         width: '80%',
-        marginBottom: 200,
+        marginBottom: 100,
     },
     title: {
         alignSelf: 'center',
