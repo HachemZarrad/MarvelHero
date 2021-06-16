@@ -15,7 +15,7 @@ export default Comic
 const styles = StyleSheet.create({
     image: {
         margin: 4,
-        height: 180,
-        width: 100
+        height: '96%',
+        width: '35%', 
     }
 })

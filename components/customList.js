@@ -40,7 +40,7 @@ const DisplayAccordingToAction = ({ action, item, pickUpHero }) => {
                 <View style={styles.comicFrame}>
                     <Comic source={{ uri: `${item.thumbnail.path}.${item.thumbnail.extension}` }} />
                     <View style={styles.comicDetails}>
-                        <Title title={item.title} />
+                        <Title title={item.title} style={styles.comicTitle} />
                         <Text style={styles.priceIssueNumber}>issue number: {item.issueNumber}</Text>
                         <Text style={styles.priceIssueNumber}>Price: ${item.prices[0].price}</Text>
                     </View>
@@ -122,7 +122,7 @@ const styles = StyleSheet.create({
         overflow: 'hidden',
     },
     comicDetails: {
-        // margin: 10,
+        margin: 10,
         justifyContent: 'center'
     },
     priceIssueNumber: {
@@ -131,6 +131,8 @@ const styles = StyleSheet.create({
         color: 'white'
     },
     comicTitle: {
-        marginRight: 15
+        marginBottom: 30,
+        marginRight: 140,
+        fontSize: 20,
     }
 })
