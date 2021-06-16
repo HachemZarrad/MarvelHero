@@ -12,14 +12,17 @@ import Title from './title';
 const Input = props => {
     const navigation = useNavigation()
 
-    const { item } = props
+    const { item, nextScreen } = props
 
     const goPickHero = () => {
-        navigation.navigate('Heroes')
+        navigation.navigate('Heroes', nextScreen)
     }
 
     return (
-        <TouchableOpacity style={styles.container} onPress={goPickHero}>
+        <TouchableOpacity
+            style={styles.container}
+            onPress={goPickHero}
+        >
             <View style={styles.hero}>
                 <Avatar
                     source={{

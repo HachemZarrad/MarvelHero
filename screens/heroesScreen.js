@@ -10,9 +10,11 @@ import { Heroes } from '../constants/heroes'
 
 import CustomList from '../components/customList'
 
-const HeroesScreen = () => {
+const HeroesScreen = ({route}) => {
 
     // const heroes = useSelector(state => state.heroes.heroes)
+    const nextScreen = route.params
+    console.log('hs',nextScreen)
 
     return (
         <ImageBackground
@@ -23,7 +25,7 @@ const HeroesScreen = () => {
                 <CustomList
                     data={Heroes}
                     action={ActionTypes.GET_HEROES}
-                    nextScreen='OnBoarding'
+                    nextScreen={nextScreen}
                 />
             </View>
         </ImageBackground>

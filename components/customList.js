@@ -62,8 +62,7 @@ const CustomList = props => {
 
     const pickUpHero = (hero) => {
         reduxDispatch(HeroesActions.getFavoriteHero(hero))
-        navigation.navigate('Comics')
-        
+        navigation.navigate(nextScreen)
     }
 
 

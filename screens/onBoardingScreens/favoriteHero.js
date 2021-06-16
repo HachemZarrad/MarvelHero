@@ -29,7 +29,7 @@ const FavoriteHero = () => {
     return (
         <View style={styles.container}>
             <Title title='Choose Your Marvel Hero' style={styles.title} />
-            <Input item={hero} />
+            <Input item={hero} nextScreen='OnBoarding' />
         </View>
     )
 }

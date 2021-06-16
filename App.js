@@ -9,21 +9,21 @@ import { FirstLaunchNavigator, AppNavigator } from './navigation/appNavigator'
 
 
 export default function App() {
-  const [firstLaunch, setFirstLaunch] = useState(null)
+  const [firstLaunch, setFirstLaunch] = useState(true)
 
-  useEffect(() => {
-    AsyncStorage.getItem('alreadyLaunched').then(value => {
-      if (value === null) {
-        AsyncStorage.setItem('alreadyLaunched', 'true')
-        setFirstLaunch(true)
-      }
-      else setFirstLaunch(false)
-    })
-  }, [])
+  // useEffect(() => {
+  //   AsyncStorage.getItem('@alreadyLaunched1').then(value => {
+  //     if (value == null) {
+  //       AsyncStorage.setItem('@alreadyLaunched1', 'true')
+  //       setFirstLaunch(true)
+  //     }
+  //     else setFirstLaunch(false)
+  //   })
+  // }, [])
 
   if (firstLaunch === null) return null
 
-  if (firstLaunch) return (
+  else if (firstLaunch === true) return (
     <Provider store={store}>
       <FirstLaunchNavigator />
     </Provider>

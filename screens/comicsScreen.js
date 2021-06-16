@@ -55,11 +55,14 @@ const ComicsScreen = () => {
     return (
         <ImageBackground source={require('../assets/dark3.png')} style={styles.background}>
             <View style={styles.container}>
-                <Input item={hero} style={styles.input} />
+                <Input
+                    style={styles.input}
+                    item={hero}
+                    nextScreen='Comics'
+                />
                 {loading ? <ActivityIndicator size='large' color='gold' style={styles.spinner} /> :
                     <CustomList
                         data={Comics}
-                        nextScreen='Comics'
                         action={ActionTypes.GET_COMICS}
                     />
                 }
@@ -78,7 +81,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         padding: 8,
-        marginTop: Platform.OS === 'ios' ? 30 : 0 ,
+        marginTop: Platform.OS === 'ios' ? 30 : 0,
         alignItems: 'center',
         backgroundColor: Colors.background,
     },
