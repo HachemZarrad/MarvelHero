@@ -7,6 +7,7 @@ export const fetchHeroes = () => async (dispatch) => {
         if (!response.ok) throw new Error('Please Check Your Internet Connection')
         const heroes = await response.json()
         dispatch({ type: ActionTypes.GET_HEROES, payload: heroes.data.results })
+        return heroes.data.results
     }
     catch (error) {
         throw error
@@ -15,4 +16,5 @@ export const fetchHeroes = () => async (dispatch) => {
 
 export const getFavoriteHero = (hero) => (dispatch) => {
     dispatch({ type: ActionTypes.GET_FAV_HERO, payload: hero })
+    return hero
 }
