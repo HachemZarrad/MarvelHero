@@ -10,7 +10,7 @@ export const fetchHeroes = () => async (dispatch) => {
         return heroes.data.results
     }
     catch (error) {
-        return null 
+        throw error 
     }
 }
 

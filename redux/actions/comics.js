@@ -7,6 +7,7 @@ export const fetchComics = (heroId) => async (dispatch) => {
             if (!response.ok) throw new Error('Please Check Your Internet Connection')
             const comics = await response.json()
             dispatch({ type: ActionTypes.GET_COMICS, payload: comics.data.results })
+            return comics.data.results
         }
         catch (error) {
             throw error
