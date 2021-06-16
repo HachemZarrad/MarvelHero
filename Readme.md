@@ -13,31 +13,31 @@ Marvel Hero is a cross-platform mobile application that uses the Marvel Develope
 ### OnBoarding Screen
 
 
-![App Screenshot](https://im.ge/i/TRUwW)
+![App Screenshot](https://user-images.githubusercontent.com/63839876/122284542-9a825f00-cee5-11eb-8223-448ab2ddfa10.png)
 
-![App Screenshot](https://im.ge/i/TR5ic)
+![App Screenshot](https://user-images.githubusercontent.com/63839876/122284559-a0784000-cee5-11eb-883f-40f1f231a8dd.png)
 
-![App Screenshot](https://im.ge/i/TR0lT)
+![App Screenshot](https://user-images.githubusercontent.com/63839876/122284625-af5ef280-cee5-11eb-9a2e-4cc39ed357e3.png)
 
-![App Screenshot](https://im.ge/i/TRhK0)
+![App Screenshot](https://user-images.githubusercontent.com/63839876/122284664-b980f100-cee5-11eb-8b2c-7cf486049683.png)
 
  ### Heroes List Screen
 
- ![App Screenshot](https://im.ge/i/5.TR9cL)
+ ![App Screenshot](https://user-images.githubusercontent.com/63839876/122284687-c00f6880-cee5-11eb-9775-1988eee63de8.png)
 
  ### Comics Screen
 
- ![App Screenshot](https://im.ge/i/TRjGG)
+ ![App Screenshot](https://user-images.githubusercontent.com/63839876/122285086-2f855800-cee6-11eb-93b3-abf473fa10ae.png)
+
+
 ## Installation 
 
 First of all, you need Node and Expo installed on your computer.
 
-### Steps 
+ ### Steps 
   - clone the repository.
   - cd marvelHero.
-  - ```bash
-    yarn test
- ```
+  - yarn install
 
     
 ## Environment Variables
@@ -50,7 +50,7 @@ To run this project, you will need to create .env file in the workspace root and
 
 `REACT_APP_TS`: //timestamp
 
-The process is simple, MarvelHero consumes Marvel API, Therefore you need to head to [Marvel Developer Website](https://developer.marvel.com/). There you'll get an API key and a private key. More details are of course found on mavel website.
+The process is simple, MarvelHero consumes Marvel API, Therefore you need to head to [Marvel Developer Website](https://developer.marvel.com/). There you'll get an API key and a private key. More details are of course found on marvel website.
 
   
 ## Running Tests
