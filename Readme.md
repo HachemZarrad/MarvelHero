@@ -36,14 +36,14 @@ First of all, you need Node and Expo installed on your computer.
 
 ## Execution
  Note that you need Expo application installed on either your physical device or emulator
- 
+
 ```bash
   yarn test
 ```
     
 ## Environment Variables
 
- To simplify execution of my task Environment variables are stored in networking.js file but in a real world project, you will need to create network.env file in the workspace root and then add the following environment variables to your it.
+ To simplify execution of my task Environment variables are stored in networking.js file but in a real world project, you will need to create network.env file in the workspace root and then add the following environment variables to it.
 
 `HASH` : md5(timestamp+PrivateKey+PublicKey)
 
