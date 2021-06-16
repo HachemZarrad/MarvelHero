@@ -51,15 +51,14 @@ const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
         width: '100%',
-        height: 52,
+        height: 55,
         marginBottom: 20,
         marginTop: Platform.OS === 'ios' ? 20 : 0,
         backgroundColor: 'white',
         alignItems: 'center',
-        borderRadius: 20,
-        borderWidth: 4,
-        borderColor: Colors.frame,
-
+        borderRadius: 15,
+        borderWidth: 5,
+        borderColor: Colors.toolbarColor,
     },
     inputBar: {
         margin: 10,

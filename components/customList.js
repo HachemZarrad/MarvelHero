@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
     comicFrame: {
         flexDirection: 'row',
         height: 200,
-        backgroundColor: Colors.toolbarColor,
+        backgroundColor: 'white',
         margin: 5,
         width: '96%',
         borderRadius: 10,
@@ -128,11 +128,12 @@ const styles = StyleSheet.create({
     priceIssueNumber: {
         fontSize: 17,
         fontWeight: 'bold',
-        color: 'white'
+        color: 'black'
     },
     comicTitle: {
         marginBottom: 30,
         marginRight: 140,
         fontSize: 20,
+        color: 'black'
     }
 })
