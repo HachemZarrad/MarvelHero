@@ -89,7 +89,7 @@ export default CustomList
 
 const styles = StyleSheet.create({
     list: {
-        width: '100%'
+        flex: 1,
     },
     heroFrame: {
         flexDirection: 'row',
@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
     comicFrame: {
         flexDirection: 'row',
         height: 200,
-        backgroundColor: Colors.accent,
+        backgroundColor: Colors.toolbarColor,
         margin: 5,
         width: '96%',
         borderRadius: 10,

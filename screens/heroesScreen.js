@@ -14,7 +14,6 @@ const HeroesScreen = ({route}) => {
 
     // const heroes = useSelector(state => state.heroes.heroes)
     const nextScreen = route.params
-    console.log('hs',nextScreen)
 
     return (
         <ImageBackground

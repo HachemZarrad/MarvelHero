@@ -53,10 +53,9 @@ const ComicsScreen = () => {
 
 
     return (
-        <ImageBackground source={require('../assets/dark3.png')} style={styles.background}>
+        <ImageBackground source={require('../assets/dark1.png')} style={styles.background}>
             <View style={styles.container}>
                 <Input
-                    style={styles.input}
                     item={hero}
                     nextScreen='Comics'
                 />
@@ -77,6 +76,7 @@ const styles = StyleSheet.create({
     background: {
         width: '100%',
         height: '100%',
+
     },
     container: {
         flex: 1,
@@ -89,6 +89,4 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
     },
-    input: {
-    }
 })

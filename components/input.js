@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, View, TouchableOpacity } from 'react-native'
+import { StyleSheet, View, TouchableOpacity, Platform } from 'react-native'
 import { useNavigation } from '@react-navigation/native';
 
 import { Avatar, Accessory } from 'react-native-elements'
@@ -51,7 +51,9 @@ const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
         width: '100%',
-        height: 50,
+        height: 52,
+        marginBottom: 20,
+        marginTop: Platform.OS === 'ios' ? 20 : 0,
         backgroundColor: 'white',
         alignItems: 'center',
         borderRadius: 20,
