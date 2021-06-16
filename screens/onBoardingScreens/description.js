@@ -7,6 +7,7 @@ import MiddleImage from '../../components/middleImage'
 import Colors from '../../constants/colors'
 
 
+
 export const Description = {
     backgroundColor: Colors.background,
     image: <MiddleImage source={require('../../assets/logoBack.png')} />,

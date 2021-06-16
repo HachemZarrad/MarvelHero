@@ -12,8 +12,6 @@ import * as HeroesActions from '../redux/actions/heroes'
 import Comic from './comic'
 import Title from './title'
 
-import Colors from '../constants/colors'
-
 
 const DisplayAccordingToAction = ({ action, item, pickUpHero }) => {
     switch (action) {

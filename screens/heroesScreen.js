@@ -6,13 +6,12 @@ import { useSelector } from 'react-redux'
 import * as ActionTypes from '../redux/actions/actionsTypes'
 
 import Colors from '../constants/colors'
-import { Heroes } from '../constants/heroes'
 
 import CustomList from '../components/customList'
 
 const HeroesScreen = ({route}) => {
 
-    // const heroes = useSelector(state => state.heroes.heroes)
+    const heroes = useSelector(state => state.heroes.heroes)
     const nextScreen = route.params
 
     return (
@@ -22,7 +21,7 @@ const HeroesScreen = ({route}) => {
         >
             <View style={styles.container}>
                 <CustomList
-                    data={Heroes}
+                    data={heroes}
                     action={ActionTypes.GET_HEROES}
                     nextScreen={nextScreen}
                 />

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { StyleSheet, View } from 'react-native'
-import { useNavigation } from '@react-navigation/native'
 
 import { useDispatch, useSelector } from 'react-redux'
 
@@ -13,17 +12,15 @@ import Paragraph from '../../components/paragraph'
 import Colors from '../../constants/colors'
 
 
-
 const FavoriteHero = () => {
 
     const hero = useSelector(state => state.heroes.favoriteHero)
     const reduxDispatch = useDispatch()
-    // const heroes = useSelector(state => state.heroes.heroes)
 
 
-    // useEffect(() => {
-    //     reduxDispatch(HeroesActions.fetchHeroes())
-    // }, [reduxDispatch])
+    useEffect(() => {
+        reduxDispatch(HeroesActions.fetchHeroes())
+    }, [reduxDispatch])
 
 
     return (

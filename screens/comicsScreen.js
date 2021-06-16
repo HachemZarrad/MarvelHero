@@ -10,7 +10,6 @@ import { fetchComics } from '../redux/actions/comics'
 import Input from '../components/input'
 import CustomList from '../components/customList'
 
-import { Comics } from '../constants/comics'
 import Colors from '../constants/colors'
 
 
@@ -19,7 +18,7 @@ const ComicsScreen = () => {
     const navigation = useNavigation()
     const reduxDispatch = useDispatch()
     const hero = useSelector(state => state.heroes.favoriteHero)
-    // const comics = useSelector(state => state.comics.comics)
+    const comics = useSelector(state => state.comics.comics)
 
     const [loading, setLoading] = useState(false)
 
@@ -44,12 +43,12 @@ const ComicsScreen = () => {
         return () => backHandler.remove();
     }, []);
 
-    // useEffect(() => {
-    //     setLoading(true)
-    //     reduxDispatch(fetchComics(hero.id)).then(() => {
-    //         setLoading(false)
-    //     })
-    // }, [reduxDispatch])
+    useEffect(() => {
+        setLoading(true)
+        reduxDispatch(fetchComics(hero.id)).then(() => {
+            setLoading(false)
+        })
+    }, [reduxDispatch, hero.id])
 
 
     return (
@@ -61,7 +60,7 @@ const ComicsScreen = () => {
                 />
                 {loading ? <ActivityIndicator size='large' color='gold' style={styles.spinner} /> :
                     <CustomList
-                        data={Comics}
+                        data={comics}
                         action={ActionTypes.GET_COMICS}
                     />
                 }
