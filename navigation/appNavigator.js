@@ -3,9 +3,24 @@ import { StatusBar, SafeAreaView } from 'react-native'
 
 import { NavigationContainer } from '@react-navigation/native'
 
-import { ComicsNavigator } from './comicsNavigator';
+import { FullNavigator, ComicsNavigator } from './comicsNavigator';
 
 import Colors from '../constants/colors'
+
+
+export const FirstLaunchNavigator = () => {
+    return (
+        <NavigationContainer>
+            <SafeAreaView>
+                <StatusBar
+                    animated={true}
+                    backgroundColor={Colors.background}
+                />
+            </SafeAreaView>
+            <FullNavigator />
+        </NavigationContainer>
+    )
+}
 
 
 export const AppNavigator = () => {
@@ -14,7 +29,7 @@ export const AppNavigator = () => {
             <SafeAreaView>
                 <StatusBar
                     animated={true}
-                    // backgroundColor={Colors.statusBar}
+                    backgroundColor={Colors.background}
                 />
             </SafeAreaView>
             <ComicsNavigator />

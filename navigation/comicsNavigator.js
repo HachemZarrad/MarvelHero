@@ -14,12 +14,23 @@ const navigationOptions = {
 
 const comicsStackNavigator = createStackNavigator()
 
-export const ComicsNavigator = () => {
-    return(
+export const FullNavigator = () => {
+    return (
         <comicsStackNavigator.Navigator screenOptions={navigationOptions}>
-            <comicsStackNavigator.Screen name='OnBoarding' component={OnBoardingScreen}/>
-            <comicsStackNavigator.Screen name='Heroes' component={HeroesScreen}/>
-            <comicsStackNavigator.Screen name='Comics' component={ComicsScreen}/>
+
+            <comicsStackNavigator.Screen name='Comics' component={ComicsScreen} />
+            <comicsStackNavigator.Screen name='Heroes' component={HeroesScreen} />
+        </comicsStackNavigator.Navigator>
+    )
+}
+
+
+export const ComicsNavigator = () => {
+    return (
+        <comicsStackNavigator.Navigator screenOptions={navigationOptions}>
+            <comicsStackNavigator.Screen name='OnBoarding' component={OnBoardingScreen} />
+            <comicsStackNavigator.Screen name='Comics' component={ComicsScreen} />
+            <comicsStackNavigator.Screen name='Heroes' component={HeroesScreen} />
         </comicsStackNavigator.Navigator>
     )
 }

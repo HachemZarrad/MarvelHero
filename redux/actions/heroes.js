@@ -1,5 +1,5 @@
 import * as ActionTypes from './actionsTypes'
-import { baseUrl, apiKey, hash, ts } from '../../constants/networking'
+import { baseUrl } from '../../constants/networking'
 
 
 

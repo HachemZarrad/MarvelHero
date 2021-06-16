@@ -1,13 +1,12 @@
 import React from 'react'
 import { StyleSheet, ImageBackground } from 'react-native'
-import Onboarding from 'react-native-onboarding-swiper'
-import { useNavigation } from '@react-navigation/native'
 
-import { TransactionScreen1 } from './onBoardingScreens/transactionScreens/screen1'
-import { TransactionScreen2 } from './onBoardingScreens/transactionScreens/screen2'
+import { useNavigation } from '@react-navigation/native'
+import Onboarding from 'react-native-onboarding-swiper'
 
 import { Description } from './onBoardingScreens/description'
-import NearbyStores from './onBoardingScreens/nearbyStores'
+import { TransactionScreen1 } from './onBoardingScreens/transactionScreens/screen1'
+import { TransactionScreen2 } from './onBoardingScreens/transactionScreens/screen2'
 import { FavoriteHeroScreen } from './onBoardingScreens/favoriteHero'
 
 import Colors from '../constants/colors'
@@ -31,12 +30,6 @@ const OnBoardingScreen = () => {
                     Description,
                     TransactionScreen1,
                     TransactionScreen2,
-                    {
-                        backgroundColor: '#fff',
-                        image: <NearbyStores />,
-                        title: 'Onboarding',
-                        subtitle: 'Done with React Native Onboarding Swiper',
-                    },
                     FavoriteHeroScreen,
                 ]}
             />
