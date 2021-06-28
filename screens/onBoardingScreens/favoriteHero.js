@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { StyleSheet, View } from 'react-native'
 
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 
-import * as HeroesActions from '../../redux/actions/heroes'
 
 import Input from '../../components/input'
 import Title from '../../components/title'
@@ -15,13 +14,6 @@ import Colors from '../../constants/colors'
 const FavoriteHero = () => {
 
     const hero = useSelector(state => state.heroes.favoriteHero)
-    const reduxDispatch = useDispatch()
-
-
-    useEffect(() => {
-        reduxDispatch(HeroesActions.fetchHeroes())
-    }, [reduxDispatch])
-
 
     return (
         <View style={styles.container}>

@@ -38,7 +38,7 @@ First of all, you need Node and Expo installed on your computer.
  Note that you need Expo application installed on either your physical device or emulator
 
 ```bash
-  yarn test
+  yarn start 
 ```
     
 ## Environment Variables
